@@ -4,7 +4,7 @@ public class Truck extends Machine {
     private int loadCapacity;
 
     public Truck(int loadCapacity, String name, String color) {
-        setLoadCapacity(loadCapacity);;
+        setLoadCapacity(loadCapacity);
         setName(name);
         setColor(color);
     }

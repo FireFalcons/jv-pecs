@@ -1,8 +1,9 @@
 package core.mate.academy.service;
 
 import java.util.List;
+import core.mate.academy.model.Machine;
 
-public interface MachineProducer<T> {
+public interface MachineProducer<M extends Machine> {
     
-    List<T> get(int count);
+    List<M> get();
 }

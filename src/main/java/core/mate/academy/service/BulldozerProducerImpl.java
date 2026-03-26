@@ -32,16 +32,9 @@ public class BulldozerProducerImpl implements MachineProducer<Bulldozer> {
     }
     
     @Override
-    public List<Bulldozer> get(int count) {
-        if (count < 1) {
-            throw new IndexOutOfBoundsException("It is impossible to create so many machines.");
-        }
-
+    public List<Bulldozer> get() {
         List<Bulldozer> bulldozers = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            bulldozers.add(createBulldozer());
-        }
-        
+        bulldozers.add(createBulldozer());
         return bulldozers;
     }
 }

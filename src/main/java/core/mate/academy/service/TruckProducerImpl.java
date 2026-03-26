@@ -32,16 +32,9 @@ public class TruckProducerImpl implements MachineProducer<Truck> {
     }
 
     @Override
-    public List<Truck> get(int count) {
-        if (count < 1) {
-            throw new IndexOutOfBoundsException("It is impossible to create so many machines.");
-        }
-
+    public List<Truck> get() {
         List<Truck> trucks = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            trucks.add(createTruck());
-        }
-        
+        trucks.add(createTruck());
         return trucks;
     }
 }

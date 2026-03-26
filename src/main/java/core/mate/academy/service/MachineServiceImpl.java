@@ -6,21 +6,18 @@ import core.mate.academy.model.Machine;
 import core.mate.academy.model.Truck;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class MachineServiceImpl implements MachineService<Machine> {
-    private Random random = new Random();
 
     @Override
     public List<Machine> getAll(Class<? extends Machine> type) {
-        int count = random.nextInt(10) + 1;
 
         if (type == Bulldozer.class) {
-            return new ArrayList<>(new BulldozerProducerImpl().get(count));
+            return new ArrayList<>(new BulldozerProducerImpl().get());
         } else if (type == Truck.class) {
-            return new ArrayList<>(new TruckProducerImpl().get(count));
+            return new ArrayList<>(new TruckProducerImpl().get());
         } else if (type == Excavator.class) {
-            return new ArrayList<>(new ExcavatorProducerImpl().get(count));
+            return new ArrayList<>(new ExcavatorProducerImpl().get());
         } else {
             return new ArrayList<>();
         }

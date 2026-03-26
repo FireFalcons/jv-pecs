@@ -32,16 +32,9 @@ public class ExcavatorProducerImpl implements MachineProducer<Excavator> {
     }
 
     @Override
-    public List<Excavator> get(int count) {
-        if (count < 1) {
-            throw new IndexOutOfBoundsException("It is impossible to create so many machines.");
-        }
-
+    public List<Excavator> get() {
         List<Excavator> excavators = new ArrayList<>();
-        for (int i = 0; i < count; i++) {
-            excavators.add(createExcavator());
-        }
-        
+        excavators.add(createExcavator());
         return excavators;
     }
 }
